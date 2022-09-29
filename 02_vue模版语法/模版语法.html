@@ -17,12 +17,16 @@
        <h1>插值语法</h1>
        <h3>你好, {{ name }} </h3>
        <hr/>
+
        <h1>指令语法</h1>
        <!--v-bind绑定指令，就把下面的url当成一个js表达式去执行了-->
-       <a v-bind:href="url.toUpperCase()" v-bind:x="x">百度一下</a>
+       <a v-bind:href="url" v-bind:x="x">百度一下</a>
        <!-- v-bind: 还可以简写为: -->
-       <a :href="url_taiwan" :x="x">google 台湾</a>
-       <p>学校: <a :href="school.url.toString()">{{ school.name }}</a> </p>
+       <a :href="url_google" :x="x">百度一下2</a>
+
+       <a :href="Date.now()">date</a>
+
+       <p>学校: <a :href="school.url">{{ school.name }}</a> </p>
    </div>
    <script type="text/javascript">
        new Vue({
@@ -31,10 +35,10 @@
                name : 'jack',
                url : 'https://www.baidu.com',
                x: 'test v-bind',
-               url_taiwan: 'https://www.google.com.tw',
+               url_google: 'https://www.google.com',
                school: {
-                   name: '武汉科技大学',
-                   url:'https://www.wust.edu.cn/'
+                   name: '沈阳师范大学',
+                   url:'https://www.synu.edu.cn/'
                }
            }
        })
