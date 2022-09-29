@@ -35,26 +35,26 @@
             //data里的都是属性
             firstName: '张',
             lastName: '三',
-            fullName:'张-三',
-            test:'test'
+            fullName: '张-三',
+            test: 'test'
         },
-        watch:{
+        watch: {
             //这里不需要深度监视则简写 监视firstname lastname
-            //计算属性不能开启异步操作更新
-            firstName(newF){
+            //================计算属性不能开启异步操作更新，但是这里的watch就可以===========================================
+            firstName(newF) {
                 //this === vm
                 setTimeout(() => {
                     //继承外部作用域的this//注意此时的函数写成箭头函数(因为它并不是由vue来调用的)
                     //如果写成function(){}的形式 this === window,则无法更新watch属性
                     //异步
-                    this.fullName = newF +  '-' + this.lastName;
+                    this.fullName = newF + '-' + this.lastName;
                 }, 1000);
             },
-            lastName(newL){
+            lastName(newL) {
                 this.fullName = this.firstName + '-' + newL;
             }
         }
-     });
+    });
 </script>
 </body>
 </html>

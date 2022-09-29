@@ -39,38 +39,38 @@
 <script type="text/javascript">
     Vue.config.productionTip = false;
     const vm = new Vue({
-        el:'#root',
-        data:{
+        el: '#root',
+        data: {
             isHot: true,
-            numbers:{
-                a:1,
-                b:1,
-                d:{
-                    e:2
+            numbers: {
+                a: 1,
+                b: 1,
+                d: {
+                    e: 2
                 }
             }
         },
         //计算属性
         computed: {
-            info(){
+            info() {
                 return this.isHot ? '炎热' : '凉爽';
             }
         },
         //改变模版数据的方法
-        methods:{
-            changeWeather(){
+        methods: {
+            changeWeather() {
                 this.isHot = !this.isHot;
             }
         },
-        watch:{
+        watch: {
             //监视的配置对象
             //watch不仅能监视data的普通属性，也可以检测计算属性
-            isHot:{
+            isHot: {
                 //immediate: true, //当这个属性为true时，页面刚渲染就运行handler函数
                 //handler 什么时候调用呢
                 //当isHot发生改变就会调用该函数
                 //handler接收两个参数，一个是这个状态参数改变前的值，另一个是改变后的旧值
-                handler(newValue, preValue){
+                handler(newValue, preValue) {
                     console.log('ishot 被修改了');
                     console.log(`newValue: ${newValue}, preValue: ${preValue}`);
                 }
@@ -82,9 +82,9 @@
             //     }
             // }
             //深度监视numbers中的所有属性
-            numbers:{
+            numbers: {
                 deep: true, //监视多级结构的属性
-                handler(){
+                handler() {
                     console.log('numbers 发生改变')
                 }
             }
