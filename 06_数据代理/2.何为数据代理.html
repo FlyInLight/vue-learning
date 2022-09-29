@@ -8,20 +8,20 @@
     <title>定义数据代理</title>
 </head>
 <body>
-    <!-- 数据代理，通过一个对象代理另一个对象中属性的操作  -->
-    <script type="text/javascript">
-        let obj = { x:200 }
-        let obj2 = { y:200 }
-        //通过obj2代理obj，来操作obj的x
-        Object.defineProperty(obj2, 'x',{
-            get(){
-                return obj.x
-            },
-            set(v){
-                obj.x = v;
-            }
-        });
+<!-- 数据代理，通过一个对象代理另一个对象中属性的操作  -->
+<script type="text/javascript">
+    let obj = {x: 200}
+    let obj2 = {y: 200}
+    //通过obj2代理obj，来操作obj的x
+    Object.defineProperty(obj2, 'x', {
+        get() {
+            return obj.x
+        },
+        set(v) {
+            obj.x = v;
+        }
+    });
 
-    </script>
+</script>
 </body>
 </html>
