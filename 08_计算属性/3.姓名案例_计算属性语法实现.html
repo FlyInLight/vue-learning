@@ -38,7 +38,7 @@
             //data里的都是属性
             firstName: '张',
             lastName: '三',
-            test:'test'
+            test: 'test'
         },
         //计算属性--> 旧属性加工
         computed: {
@@ -54,7 +54,7 @@
                  * 3.methods没有缓存，读几次就调用几次无论要用的数据是否发生变化
                  *  @returns {string}
                  */
-                get(){
+                get() {
                     //此时get函数中的this指向是vm
                     console.log('get调用了', this);
                     return this.firstName + '--' + this.lastName
@@ -64,10 +64,10 @@
                  *   1.当fullName被修改时
                  * @param value
                  */
-                set(value){
+                set(value) {
                     //修改计算属性所依赖的普通属性(放在data里面的)
                     //this === vm
-                    const [ firstName, lastName ] = value.split('-');
+                    const [firstName, lastName] = value.split('-');
                     this.firstName = firstName;
                     this.lastName = lastName; //依赖属性发生改变之后,计算属性自动改变
                 }
