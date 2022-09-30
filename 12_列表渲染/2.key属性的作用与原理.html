@@ -41,10 +41,11 @@
     <button @click.once="add">添加一个老刘</button>
     <ul>
         <!--key唯一标识: 身份证，属性key是被vue给征用的，并不反应在真实dom上-->
+        <!--:key默认index，此时如果改变数组顺序可能会出问题，底层渲染机制 diff-->
         <li v-for='(person, index) in persons' :key="person.id">
             {{person.name}} - {{ person.age }}
             <!--为了看到key值的不正确滥用所导致的问题，我们添加一个input框-->
-            <input type="text" />
+            <input type="text"/>
         </li>
     </ul>
 </div>
@@ -60,12 +61,12 @@
                 {id: '003', name: '王五', age: 20}
             ],
         },
-        methods:{
-            add(){
-                //往数组的头添加元素
+        methods: {
+            add() {
+                //往数组的头添加元素 push数组后加
                 this.persons.unshift({
-                    id:'004',
-                    name:'老刘',
+                    id: '004',
+                    name: '老刘',
                     age: 40
                 })
             }
