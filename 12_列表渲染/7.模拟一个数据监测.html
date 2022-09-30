@@ -28,28 +28,27 @@
     const obs = new Observer(data);
 
     //准备一个vm实例
-    let vm = { };
+    let vm = {};
 
     vm._data = data = obs;
 
     //观察者
-    function Observer(obj){
+    function Observer(obj) {
         //缺陷：未实现递归(对象嵌套对象就会出现问题)
         const keys = Object.keys(obj);
         //遍历对象当中所有的key
         keys.forEach(key => {
             Object.defineProperty(this, key, {
-                get(){
+                get() {
                     return obj[key]
                 },
                 set(v) {
-                  console.log(`${key}的值改变了,变为${v}`);
-                  obj[key] = v;
+                    console.log(`${key}的值改变了,变为${v}`);
+                    obj[key] = v;
                 }
             })
         });
     }
-
 
 
 </script>

@@ -18,23 +18,23 @@
     </ul>
 </div>
 <script type="text/javascript">
-    const  vm = new Vue({
-        el:'#root',
+    const vm = new Vue({
+        el: '#root',
         data: {
             persons: [
-                {id: "001", name:'周冬雨', age:20, sex:'女'},
-                {id: "002", name:'马冬梅', age:19, sex:'女'},
-                {id: "003", name:'周杰伦', age:21, sex:'男'},
-                {id: "004", name:'温兆伦', age:22, sex: '男'},
+                {id: "001", name: '周冬雨', age: 20, sex: '女'},
+                {id: "002", name: '马冬梅', age: 19, sex: '女'},
+                {id: "003", name: '周杰伦', age: 21, sex: '男'},
+                {id: "004", name: '温兆伦', age: 22, sex: '男'},
             ],
         },
-        methods:{
-            updateM(){
+        methods: {
+            updateM() {
                 // this.persons[1].name = '马老师';  //奏效
                 // this.persons[1].age = 50;      //奏效
                 // this.persons[1].sex = '男'; //奏效
                 // this.persons[1] = { id: '002', name: '马老师', age: 50, sex:'男' }; //这样修改vue是无法监测数据的
-                this.persons.splice(1,1,{ id: '002', name: '马老师', age: 50, sex:'男' });
+                this.persons.splice(1, 1, {id: '002', name: '马老师', age: 50, sex: '男'});
             }
 
         }
