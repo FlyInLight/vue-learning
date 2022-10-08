@@ -33,7 +33,7 @@
 -->
 <div id="root">
     <h2>当前的n值是：<span v-text="n"></span></h2>
-<!--    <h2>放大10倍后的n值是: <span v-big-number="n"></span></h2>-->
+    <!--    <h2>放大10倍后的n值是: <span v-big-number="n"></span></h2>-->
     <h2>放大10倍后的n值是: <span v-big="n"></span></h2>
     <button @click="n++">点我n+1</button>
     <p>测试指令函数所调用的时机: {{ name }} </p>
@@ -48,34 +48,34 @@
     //此时自定义fbind指令使全局指令了，其他vue实例所管理的容器也可以使用
     //全局指令
     Vue.directive('fbind', {
-        bind(el, binding){
+        bind(el, binding) {
             // console.log('bind')
             el.value = binding.value;
         },
         //指令被插入页面时
-        inserted(el, binding){
+        inserted(el, binding) {
             // console.log('inserted')
             el.focus();
         },
         //指令所在模版被重新解析时
-        update(el, binding){
+        update(el, binding) {
             // console.log('update');
             el.value = binding.value;
         }
     })
     const vm = new Vue({
-        el:"#root",
-        data:{
+        el: "#root",
+        data: {
             name: '上海',
-            n:1
+            n: 1
         },
         //定义指令的配置项: directives
-        directives:{
+        directives: {
             /**
              big函数的调用时机:
-                    1.指令与元素成功绑定(但注意此时dom元素还没有成功的被弄到页面上去)时会被调用 (首次,类似于dom元素一加载)
-                    2.指令所在的模版被重新解析时会被再次调用
-            **/
+             1.指令与元素成功绑定(但注意此时dom元素还没有成功的被弄到页面上去)时会被调用 (首次,类似于dom元素一加载)
+             2.指令所在的模版被重新解析时会被再次调用
+             **/
             //两种写法:1.对象(key-value) 2.函数
             // 'big-number'(el,binding){
             //     console.log('big被调用啦！')
@@ -84,7 +84,7 @@
             //     //原生dom的操作
             //     el.innerText = binding.value * 10;
             // },
-            big(el,binding){
+            big(el, binding) {
                 console.log(this); //注意此处this===window vue实例对象此时'不管'你写在指令里面的函数了
                 console.log('big被调用啦！')
                 //收到两个参数，第一个参数代表真实dom元素，第二个参数是绑定对象，关注该绑定对象中的value属性
@@ -115,8 +115,8 @@
     });
 
     const vm2 = new Vue({
-        el:'#root2',
-        data:{
+        el: '#root2',
+        data: {
             x: 1,
         }
     })
