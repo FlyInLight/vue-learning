@@ -33,44 +33,44 @@
     <h3 :x="msg | mySlice">你好,世界</h3>
 </div>
 <div id="root2">
-   <h2>{{ msg | mySlice }}</h2>
+    <h2>{{ msg | mySlice }}</h2>
 </div>
 <script type="text/javascript">
     Vue.config.productionTip = false;
     //全局过滤器的配置
     //注意配置一定要new vue实例之前确定
-    Vue.filter('mySlice', function (val){
-        return val.slice(0,4);
+    Vue.filter('mySlice', function (val) {
+        return val.slice(0, 4);
     });
     new Vue({
         el: "#root",
-        data:{
+        data: {
             time: 1631808423062,
             msg: "你好，世界"
         },
-        computed:{
-            fmtTime(){
+        computed: {
+            fmtTime() {
                 return dayjs(this.time).format('YYYY-MM-DD HH:mm:ss')
             }
         },
-        methods:{
-            getFmtTime(){
+        methods: {
+            getFmtTime() {
                 return dayjs(this.time).format('YYYY-MM-DD HH:mm:ss')
             }
         },
         //局部过滤器
-        filters:{
+        filters: {
             //过滤器本质上也是一个函数
-            timeFormater(val, formate = 'YYYY-MM-DD HH:mm:ss'){
+            timeFormater(val, formate = 'YYYY-MM-DD HH:mm:ss') {
                 return dayjs(val).format(formate)
             },
         }
     });
 
     const vm2 = new Vue({
-        el:"#root2",
-        data:{
-            msg:'welcome'
+        el: "#root2",
+        data: {
+            msg: 'welcome'
         }
     })
 </script>
