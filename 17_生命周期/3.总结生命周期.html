@@ -28,11 +28,11 @@
 <script type="text/javascript">
     Vue.config.productionTip = false;
     const vm = new Vue({
-        el:"#root",
-        data:{
+        el: "#root",
+        data: {
             opacity: 1,
         },
-        methods:{
+        methods: {
             stop() {
                 //只是清除了定时器，响应式仍然存在
                 // clearInterval(this.timer);
@@ -44,15 +44,15 @@
         //mounted
         //vue完成模版的解析并把初始的真实的dom元素挂载完毕就调用mounted函数
         //只调用一次
-        mounted(){
+        mounted() {
             //关键性时刻调用对应的函数 生命周期
             console.log('mounted');
             this.timer = setInterval(() => {
                 console.log('inter')
                 //剪头函数没有this会从外部作用域寻找 mounted是由vue管理的函数，所以该函数中的this是vm(vue实例对象)
                 this.opacity -= 0.01;
-                if(this.opacity <= 0) this.opacity = 1;
-            },16);
+                if (this.opacity <= 0) this.opacity = 1;
+            }, 16);
         },
 
         beforeDestroy() {
