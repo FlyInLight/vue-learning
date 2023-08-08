@@ -26,24 +26,24 @@
     const school = Vue.extend({
         template: `
           <div>
-             <h1>学校名称:{{ name }}</h1>
-             <h1>学校地址:{{ address }}</h1>
-             <button @click="showname">点我提示学校名</button>
-             <button @click="cx">点我输出x</button>
+          <h1>学校名称:{{ name }}</h1>
+          <h1>学校地址:{{ address }}</h1>
+          <button @click="showname">点我提示学校名</button>
+          <button @click="cx">点我输出x</button>
           </div>
         `,
-        data(){
+        data() {
             return {
-                name: '武汉科技大学',  //vuecomponent的实例对象
-                address:'武汉'
+                name: '沈阳师范大学',  //vuecomponent的实例对象
+                address: '沈阳'
             }
         },
-        methods:{
-            showname(){
+        methods: {
+            showname() {
                 console.log(this);
                 console.log(this.name);
             },
-            cx(){
+            cx() {
                 console.log(this); //this是VueComponent的实例对象
                 console.log(this.__proto__.__proto__ === Vue.prototype) //true 这里重要的内置关系哦！！！
                 console.log()
@@ -53,11 +53,11 @@
     });
 
     new Vue({
-        el:"#root",
-        data:{
+        el: "#root",
+        data: {
             msg: 'hello'
         },
-        components:{
+        components: {
             school
         }
     });

@@ -40,22 +40,22 @@
     const school = Vue.extend({
         template: `
           <div>
-             <h1>学校名称:{{ name }}</h1>
-             <h1>学校地址:{{ address }}</h1>
-             <button @click="showname">点我提示学校名</button>
+          <h1>学校名称:{{ name }}</h1>
+          <h1>学校地址:{{ address }}</h1>
+          <button @click="showname">点我提示学校名</button>
           </div>
         `,
-        data(){
+        data() {
             return {
-                name: '武汉科技大学',  //vuecomponent的实例对象
-                address:'武汉'
+                name: '沈阳师范大学',  //vuecomponent的实例对象
+                address: '沈阳'
             }
         },
-        methods:{
-            showname(){
-              console.log(this);
-              console.log(this.name);
-           }
+        methods: {
+            showname() {
+                console.log(this);
+                console.log(this.name);
+            }
         }
     });
 
@@ -64,17 +64,17 @@
 
     //测试组件
     const test = Vue.extend({
-       template:  `<h1>panyue</h1>`
+        template: `<h1>panyue</h1>`
     });
 
     //hello组件
     const hello = Vue.extend({
-        template:`
+        template: `
           <div>
           <h1>{{ msg }}</h1>
           <test></test>
-        </div>`,
-        data(){
+          </div>`,
+        data() {
             return {
                 msg: '你好'
             }
@@ -86,8 +86,8 @@
 
 
     const vm = new Vue({
-        el:"#root",
-        components:{
+        el: "#root",
+        components: {
             school,
             hello
         }

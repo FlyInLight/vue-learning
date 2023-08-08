@@ -19,11 +19,11 @@
 //组件交互的代码
 //export default school分别暴露
 export default {
-  name: 'Student', //开发者工具最终呈现的名字为School
+  name: 'MyStudent', //开发者工具最终呈现的名字为School
   data() {
     return {
-      name: 'panyue',
-      age: 21
+      name: 'hexuan',
+      age: 24
     }
   },
   methods: {

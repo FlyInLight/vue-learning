@@ -41,7 +41,7 @@
     <hr/>
 </div>
 <div id="root2">
-   <h2>root2容器</h2>
+    <h2>root2容器</h2>
     <hello></hello>
 </div>
 <script type="text/javascript">
@@ -69,12 +69,12 @@
             data() {
                 //注意这里不要写箭头函数
                 return {
-                    schoolName: '武汉科技大学',
-                    address: '武汉',
+                    schoolName: '沈阳师范大学',
+                    address: '沈阳',
                 }
             },
-            methods:{
-                showName(){
+            methods: {
+                showName() {
                     alert(this.schoolName)
                 }
             }
@@ -82,10 +82,10 @@
     //创建school组件
     const student = Vue.extend({
         template: `
-            <div>
-              <h2>学生名字:{{ studentName }}</h2>
-              <h2>学生年龄:{{ age }}</h2>
-            </div>
+          <div>
+          <h2>学生名字:{{ studentName }}</h2>
+          <h2>学生年龄:{{ age }}</h2>
+          </div>
         `,
         data() {
             return {
@@ -97,12 +97,12 @@
 
 
     const hello = Vue.extend({
-        template:`
+        template: `
           <div>
-            <h2>你好世界,{{ name }}</h2>
+          <h2>你好世界,{{ name }}</h2>
           </div>
         `,
-        data(){
+        data() {
             return {
                 name: 'panyue'
             }
@@ -116,7 +116,7 @@
     new Vue({
         el: "#root",
         //配置组件(局部注册)
-        data:{
+        data: {
             msg: 'hello world'
         },
         components: {
@@ -126,7 +126,7 @@
     })
 
     new Vue({
-       el: '#root2',
+        el: '#root2',
     });
 
 </script>

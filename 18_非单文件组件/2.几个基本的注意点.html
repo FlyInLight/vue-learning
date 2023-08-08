@@ -33,9 +33,9 @@
 		-->
     <h1>{{ msg }}</h1>
     <hello></hello>
-<!--    <school/>-->
-<!--    <school/>-->
-<!--    <school/>-->
+    <!--    <school/>-->
+    <!--    <school/>-->
+    <!--    <school/>-->
     <school></school>
     <school></school>
     <school></school>
@@ -46,14 +46,14 @@
     const s = Vue.extend({
         template: `
           <div>
-            <h2>学校名称:{{ name }}</h2>
-            <h2>学校地址:{{ address }}</h2>
+          <h2>学校名称:{{ name }}</h2>
+          <h2>学校地址:{{ address }}</h2>
           </div>
         `,
-        data(){
+        data() {
             return {
-                name: '武汉科技大学',
-                address: '武汉'
+                name: '沈阳师范大学',
+                address: '沈阳'
             }
         },
         name: 'test' //该配置是指定组件在开发者工具中指定的名称
@@ -63,25 +63,24 @@
     const hello = {
         template: `
           <div>
-            <h1>{{ msg }}</h1>
-         </div>
+          <h1>{{ msg }}</h1>
+          </div>
         `,
-        data(){
+        data() {
             return {
-                msg:"hello"
+                msg: "hello"
             }
         }
     }
 
 
-
     new Vue({
         el: "#root",
-        data:{
-          msg: '欢迎学习vue'
+        data: {
+            msg: '欢迎学习vue'
         },
-        components:{
-            school:s,
+        components: {
+            school: s,
             hello
         }
     })

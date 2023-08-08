@@ -19,7 +19,7 @@
 //组件交互的代码
 //export default school分别暴露
 export default {
-  name: 'School', //开发者工具最终呈现的名字为School
+  name: 'MySchoolInfo',
   data() {
     return {
       name: '沈阳师范大学',
@@ -32,8 +32,7 @@ export default {
     }
   }
 };
-
 //统一暴露
-// export { school };
-// export default school //默认暴露
+// export { MySchoolInfo };
+// export default MySchoolInfo //默认暴露
 </script>
