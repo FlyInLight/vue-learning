@@ -1,7 +1,9 @@
 <template>
   <div class="demo">
-    <h2>学校名称：{{ name }}</h2>
+    <h2>学校名称：{{ name | mySlice }}</h2>
     <h2>学校地址：{{ address }}</h2>
+    <input type="text" v-fbind:value="name">
+    <button @click="test">测试hello</button>
   </div>
 </template>
 
@@ -14,11 +16,10 @@ export default {
       address: '地址'
     }
   },
+  methods: {
+    test() {
+      this.hello();
+    },
+  }
 };
 </script>
-
-<style lang="less" scoped>
-.demo {
-  background-color: skyblue;
-}
-</style>
