@@ -18,8 +18,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.demo {
-  background-color: orange;
-}
-</style>

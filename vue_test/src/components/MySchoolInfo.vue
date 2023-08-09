@@ -17,8 +17,3 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
-.demo {
-  background-color: skyblue;
-}
-</style>
