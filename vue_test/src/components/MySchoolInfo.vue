@@ -2,6 +2,7 @@
   <div class="demo">
     <h2>学校名称：{{ name }}</h2>
     <h2>学校地址：{{ address }}</h2>
+    <button @click="sendSchoolName">给app学校名</button>
   </div>
 </template>
 
@@ -14,6 +15,12 @@ export default {
       address: '地址'
     }
   },
+  props: ['getSchoolName'],
+  methods: {
+    sendSchoolName() {
+      this.getSchoolName(this.name)
+    },
+  }
 };
 </script>
 
