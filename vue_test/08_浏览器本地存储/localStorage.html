@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>本地存储空间 localStorage</title>
+</head>
+<body>
+<h2>本地存储空间 localStorage</h2>
+<button onclick="saveData()">保存数据</button>
+<button onclick="readData()">读取数据</button>
+<button onclick="deleteData()">删除数据</button>
+<button onclick="clearData()">清空</button>
+<!--
+浏览器关闭之后数据还在
+用户可以主动清空浏览器缓存
+存储大小一般5M，不同浏览器不一样
+
+-->
+<script type="text/javascript">
+    let p = {name: '张三', age: 18}
+
+    function saveData() {
+        // 只能存放字符串类型键值对，其他类型会被调用toString
+        window.localStorage.setItem("name", "张三");
+        window.localStorage.setItem("name2", 666);
+        window.localStorage.setItem("person", JSON.stringify(p));
+    }
+
+    function readData() {
+        // 只能存放字符串类型键值对，其他类型会被调用toString
+        console.log(localStorage.getItem("name"))
+        console.log(localStorage.getItem("name2"))
+        console.log(JSON.parse(localStorage.getItem("person")))
+    }
+
+    function deleteData() {
+        localStorage.removeItem("name2");
+    }
+
+    function clearData() {
+        localStorage.clear();
+    }
+</script>
+</body>
+</html>

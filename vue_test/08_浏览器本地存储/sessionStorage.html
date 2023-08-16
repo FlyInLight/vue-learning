@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>会话存储空间</title>
+</head>
+<body>
+<h2>本地存储空间 localStorage</h2>
+<button onclick="saveData()">保存数据</button>
+<button onclick="readData()">读取数据</button>
+<button onclick="deleteData()">删除数据</button>
+<button onclick="clearData()">清空</button>
+<!--浏览器关闭之后数据清空-->
+<script type="text/javascript">
+    let p = {name: '张三', age: 18}
+
+    function saveData() {
+        // 只能存放字符串类型键值对，其他类型会被调用toString
+        window.sessionStorage.setItem("name", "张三");
+        window.sessionStorage.setItem("name2", 666);
+        window.sessionStorage.setItem("person", JSON.stringify(p));
+    }
+
+    function readData() {
+        // 只能存放字符串类型键值对，其他类型会被调用toString
+        console.log(sessionStorage.getItem("name"))
+        console.log(sessionStorage.getItem("name2"))
+        console.log(JSON.parse(sessionStorage.getItem("person")))
+    }
+
+    function deleteData() {
+        sessionStorage.removeItem("name2");
+    }
+
+    function clearData() {
+        sessionStorage.clear();
+    }
+</script>
+</body>
+</html>
